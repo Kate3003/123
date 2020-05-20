@@ -56,9 +56,7 @@ namespace TestSeleniumBasic
             driver.FindElement(By.XPath("//input[@id=\"UnitsOnOrder\"]")).SendKeys("0");
             driver.FindElement(By.XPath("//input[@id=\"ReorderLevel\"]")).SendKeys("11");
             driver.FindElement(By.CssSelector(".btn")).Click();
-            var d = "All product";
-            Assert.IsFalse(d == "Product");
-        
+            Assert.IsTrue(driver.FindElement(By.XPath("//*[text()=\"Pie\"]")).Displayed);
         }
 
         [TearDown]
