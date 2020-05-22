@@ -20,8 +20,8 @@ namespace TestSeleniumBasic
 
         public void Login(string user)
         {
-            new Actions(driver).Click(searchInput).SendKeys(user).Build().Perform();
-            new Actions(driver).Click(searchInput1).SendKeys(user).Build().Perform();
+            new Actions(driver).Click(searchName).SendKeys(user).Build().Perform();
+            new Actions(driver).Click(searchPassword).SendKeys(user).Build().Perform();
             new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
         }
     }
