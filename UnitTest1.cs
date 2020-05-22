@@ -51,7 +51,7 @@ namespace TestSeleniumBasic
         [Test]
         public void AddProduct()
         {
-<<<<<<< HEAD
+
             mainPage = new MainPage(driver);
             mainPage.SearchForHost(SearchText);
             allProductsPage = new AllProductsPage(driver);
@@ -63,22 +63,6 @@ namespace TestSeleniumBasic
             allProductsPage.SearchUIS(SearchText6);
             allProductsPage.SearchUOO(SearchText7);
             allProductsPage.SearchRL(SearchText8);
-=======
-            driver.FindElement(By.XPath("//input[@id=\"Name\"]")).SendKeys("user");
-            driver.FindElement(By.XPath("//input[@id=\"Password\"]")).SendKeys("user");
-            driver.FindElement(By.CssSelector(".btn")).Click();
-            driver.FindElement(By.XPath("(//a[contains(text(),'All Products')])[2]")).Click();
-            driver.FindElement(By.LinkText("Create new")).Click();
-            driver.FindElement(By.XPath("//input[@id=\"ProductName\"]")).SendKeys("Pie");
-            driver.FindElement(By.XPath("//select[@id=\"CategoryId\"]")).SendKeys("Confections");
-            driver.FindElement(By.XPath("//select[@id=\"SupplierId\"]")).SendKeys("Pavlova, Ltd.");
-            driver.FindElement(By.XPath("//input[@id=\"UnitPrice\"]")).SendKeys("12");
-            driver.FindElement(By.XPath("//input[@id=\"QuantityPerUnit\"]")).SendKeys("31-450 g boxes");
-            driver.FindElement(By.XPath("//input[@id=\"UnitsInStock\"]")).SendKeys("28");
-            driver.FindElement(By.XPath("//input[@id=\"UnitsOnOrder\"]")).SendKeys("0");
-            driver.FindElement(By.XPath("//input[@id=\"ReorderLevel\"]")).SendKeys("11");
-            driver.FindElement(By.CssSelector(".btn")).Click();
->>>>>>> bd123f6c9f540dc61d8a36e0ff44ed50b2514efc
             Assert.IsTrue(driver.FindElement(By.XPath("//*[text()=\"Pie\"]")).Displayed);
         }
 
