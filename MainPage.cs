@@ -16,9 +16,9 @@ namespace TestSeleniumBasic
         }
         private IWebElement searchInput => driver.FindElement(By.XPath("//input[@id=\"Name\"]"));
         private IWebElement searchInput1=> driver.FindElement(By.XPath("//input[@id=\"Password\"]"));
-        private IWebElement searchBtn => driver.FindElement(By.CssSelector(".btn"));
+        private IWebElement searchBatten => driver.FindElement(By.CssSelector(".btn"));
 
-        public void SearchForHost(string user)
+        public void Login(string user)
         {
             new Actions(driver).Click(searchInput).SendKeys(user).Build().Perform();
             new Actions(driver).Click(searchInput1).SendKeys(user).Build().Perform();

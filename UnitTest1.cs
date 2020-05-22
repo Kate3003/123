@@ -14,14 +14,14 @@ namespace TestSeleniumBasic
         private MainPage mainPage;
         private const string SearchText = "user";
         private AllProductsPage allProductsPage;
-        private const string SearchText1 = "Pie";
-        private const string SearchText2 = "Confections";
-        private const string SearchText3 = "Pavlova, Ltd.";
-        private const string SearchText4 = "12";
-        private const string SearchText5 = "31-450 g boxes";
-        private const string SearchText6 = "28";
-        private const string SearchText7 = "0";
-        private const string SearchText8 = "11";
+        private const string SearchName = "Pie";
+        private const string SearchCategory = "Confections";
+        private const string SearchSupplier = "Pavlova, Ltd.";
+        private const string SearchUnitPrice = "12";
+        private const string SearchQuantityPerUnit = "31-450 g boxes";
+        private const string SearchUnitsInStock = "28";
+        private const string SearchUnitsOnOrder = "0";
+        private const string SearchReorderLevel = "11";
         
         [SetUp]
         public void Setup()
@@ -35,7 +35,7 @@ namespace TestSeleniumBasic
         public void Login()
         {
             mainPage = new MainPage(driver);
-            mainPage.SearchForHost(SearchText);
+            mainPage.Login(SearchText);
             Assert.AreEqual("Home page", driver.FindElement(By.XPath("//h2")).Text);
         }
 
@@ -43,7 +43,7 @@ namespace TestSeleniumBasic
         public void Logout()
         {
             mainPage = new MainPage(driver);
-            mainPage.SearchForHost(SearchText);
+            mainPage.Login(SearchText);
             driver.FindElement(By.XPath("//a[contains(text(),'Logout')]")).Click();
             Assert.AreEqual("Login", driver.FindElement(By.XPath("//h2")).Text);
         }
@@ -53,16 +53,16 @@ namespace TestSeleniumBasic
         {
 
             mainPage = new MainPage(driver);
-            mainPage.SearchForHost(SearchText);
+            mainPage.Login(SearchText);
             allProductsPage = new AllProductsPage(driver);
-            allProductsPage.SearchForHost1(SearchText1);
-            allProductsPage.SearchCatId(SearchText2);
-            allProductsPage.SearchSupId(SearchText3);
-            allProductsPage.SearchUP(SearchText4);
-            allProductsPage.SearchQPU(SearchText5);
-            allProductsPage.SearchUIS(SearchText6);
-            allProductsPage.SearchUOO(SearchText7);
-            allProductsPage.SearchRL(SearchText8);
+            allProductsPage.GiveName(SearchName);
+            allProductsPage.GiveCategory(SearchCategory);
+            allProductsPage.GiveSupplier(SearchSupplier);
+            allProductsPage.GiveUnitPrice(SearchUnitPrice);
+            allProductsPage.GiveQuantityPerUnit(SearchQuantityPerUnit);
+            allProductsPage.GiveUnitsInStock(SearchUnitsInStock);
+            allProductsPage.GiveUnitsOnOrder(SearchUnitsOnOrder);
+            allProductsPage.GiveReorderLevel(SearchReorderLevel);
             Assert.IsTrue(driver.FindElement(By.XPath("//*[text()=\"Pie\"]")).Displayed);
         }
 

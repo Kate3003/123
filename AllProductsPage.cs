@@ -13,53 +13,53 @@ namespace TestSeleniumBasic
             this.driver = driver;
         }
     
-        private IWebElement searchAll => driver.FindElement(By.XPath("(//a[contains(text(),'All Products')])[2]"));
-        private IWebElement searchNew => driver.FindElement(By.LinkText("Create new"));
-        private IWebElement searchMame => driver.FindElement(By.XPath("//input[@id=\"ProductName\"]"));
-        private IWebElement searchCatId => driver.FindElement(By.XPath("//select[@id=\"CategoryId\"]"));
-        private IWebElement searchSupId => driver.FindElement(By.XPath("//select[@id=\"SupplierId\"]"));
-        private IWebElement searchUP => driver.FindElement(By.XPath("//input[@id=\"UnitPrice\"]"));
-        private IWebElement searchQPU => driver.FindElement(By.XPath("//input[@id=\"QuantityPerUnit\"]"));
-        private IWebElement searchUIS => driver.FindElement(By.XPath("//input[@id=\"UnitsInStock\"]"));
-        private IWebElement searchUOO => driver.FindElement(By.XPath("//input[@id=\"UnitsOnOrder\"]"));
-        private IWebElement searchRL => driver.FindElement(By.XPath("//input[@id=\"ReorderLevel\"]"));
-        private IWebElement searchBTN => driver.FindElement(By.CssSelector(".btn"));
+        private IWebElement searchAllProducts => driver.FindElement(By.XPath("(//a[contains(text(),'All Products')])[2]"));
+        private IWebElement searchCreateNew => driver.FindElement(By.LinkText("Create new"));
+        private IWebElement searchProductName => driver.FindElement(By.XPath("//input[@id=\"ProductName\"]"));
+        private IWebElement searchCategoryId => driver.FindElement(By.XPath("//select[@id=\"CategoryId\"]"));
+        private IWebElement searchSupplierId => driver.FindElement(By.XPath("//select[@id=\"SupplierId\"]"));
+        private IWebElement searchUnitPrice => driver.FindElement(By.XPath("//input[@id=\"UnitPrice\"]"));
+        private IWebElement searchQuantityPerUnit => driver.FindElement(By.XPath("//input[@id=\"QuantityPerUnit\"]"));
+        private IWebElement searchUnitsInStock => driver.FindElement(By.XPath("//input[@id=\"UnitsInStock\"]"));
+        private IWebElement searchUnitsOnOrder => driver.FindElement(By.XPath("//input[@id=\"UnitsOnOrder\"]"));
+        private IWebElement searchReorderLevel => driver.FindElement(By.XPath("//input[@id=\"ReorderLevel\"]"));
+        private IWebElement searchBatten => driver.FindElement(By.CssSelector(".btn"));
 
-        public void SearchForHost1(string Pie)
+        public void GiveName(string Name)
 
         {
-            searchAll.Click();
-            searchNew.Click();
-            searchMame.SendKeys(Pie);
+            searchAllProducts.Click();
+            searchCreateNew.Click();
+            searchProductName.SendKeys("Pie");
         }
-        public void SearchCatId(string Confections)
+        public void GiveCategory(string Category)
         {
-            searchCatId.SendKeys(Confections);
+            searchCategoryId.SendKeys("Confections");
         }
-        public void SearchSupId(string Pavlova)
+        public void GiveSupplier(string Supplier)
         {
-            searchSupId.SendKeys("Pavlova, Ltd.");
+            searchSupplierId.SendKeys("Pavlova, Ltd.");
         }
-        public void SearchUP(string UP)
+        public void GiveUnitPrice(string UnitPrice)
         {
-            searchUP.SendKeys("12");
+            searchUnitPrice.SendKeys("12");
         }
-        public void SearchQPU(string QRU)
+        public void GiveQuantityPerUnit(string QuantityPerUnit)
         {
-            searchQPU.SendKeys("31-450 g boxes");
+            searchQuantityPerUnit.SendKeys("31-450 g boxes");
         }
-        public void SearchUIS(string UIS)
+        public void GiveUnitsInStock(string UnitsInStock)
         {
-            searchUIS.SendKeys("28");
+            searchUnitsInStock.SendKeys("28");
         }
-        public void SearchUOO(string UOO)
+        public void GiveUnitsOnOrder(string UnitsOnOrder)
         {
-            searchUOO.SendKeys("0");
+            searchUnitsOnOrder.SendKeys("0");
         }
-        public void SearchRL(string RL)
+        public void GiveReorderLevel(string ReorderLevel)
         {
-            searchRL.SendKeys("11");
-            searchBTN.Click();
+            searchReorderLevel.SendKeys("11");
+            searchBatten.Click();
         }
     }
 }
