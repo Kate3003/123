@@ -5,6 +5,8 @@ using System.Threading.Channels;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using TestSeleniumBasic.Business_object;
+using TestSeleniumBasic.Service.UI;
 
 namespace TestSeleniumBasic
 {
@@ -12,16 +14,9 @@ namespace TestSeleniumBasic
     {
         private IWebDriver driver;
         private MainPage mainPage;
-        private const string SearchText = "user";
-        private AllProductsPage allProductsPage;
-        private const string SearchName = "Pie";
-        private const string SearchCategory = "Confections";
-        private const string SearchSupplier = "Pavlova, Ltd.";
-        private const string SearchUnitPrice = "12";
-        private const string SearchQuantityPerUnit = "31-450 g boxes";
-        private const string SearchUnitsInStock = "28";
-        private const string SearchUnitsOnOrder = "0";
-        private const string SearchReorderLevel = "11";
+        //private AllProductsPage allProductsPage;
+        private Product pie = new Product("Pie", "Confections", "Pavlova, Ltd.", "12", "31-450 g boxes", "28", "0", "11");
+        private User user = new User("user");
         
         [SetUp]
         public void Setup()
@@ -35,7 +30,7 @@ namespace TestSeleniumBasic
         public void Login()
         {
             mainPage = new MainPage(driver);
-            mainPage.Login(SearchText);
+            mainPage.Login(user);
             Assert.AreEqual("Home page", driver.FindElement(By.XPath("//h2")).Text);
         }
 
@@ -43,7 +38,7 @@ namespace TestSeleniumBasic
         public void Logout()
         {
             mainPage = new MainPage(driver);
-            mainPage.Login(SearchText);
+            mainPage.Login(user);
             driver.FindElement(By.XPath("//a[contains(text(),'Logout')]")).Click();
             Assert.AreEqual("Login", driver.FindElement(By.XPath("//h2")).Text);
         }
@@ -51,18 +46,9 @@ namespace TestSeleniumBasic
         [Test]
         public void AddProduct()
         {
-
             mainPage = new MainPage(driver);
-            mainPage.Login(SearchText);
-            allProductsPage = new AllProductsPage(driver);
-            allProductsPage.GiveName(SearchName);
-            allProductsPage.GiveCategory(SearchCategory);
-            allProductsPage.GiveSupplier(SearchSupplier);
-            allProductsPage.GiveUnitPrice(SearchUnitPrice);
-            allProductsPage.GiveQuantityPerUnit(SearchQuantityPerUnit);
-            allProductsPage.GiveUnitsInStock(SearchUnitsInStock);
-            allProductsPage.GiveUnitsOnOrder(SearchUnitsOnOrder);
-            allProductsPage.GiveReorderLevel(SearchReorderLevel);
+            mainPage.Login(user);
+            ProductService.Add(pie, driver);
             Assert.IsTrue(driver.FindElement(By.XPath("//*[text()=\"Pie\"]")).Displayed);
         }
 

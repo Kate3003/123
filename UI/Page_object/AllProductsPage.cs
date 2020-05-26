@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TestSeleniumBasic.Business_object;
 
 namespace TestSeleniumBasic
 {
@@ -25,38 +26,38 @@ namespace TestSeleniumBasic
         private IWebElement searchReorderLevel => driver.FindElement(By.XPath("//input[@id=\"ReorderLevel\"]"));
         private IWebElement searchBatten => driver.FindElement(By.CssSelector(".btn"));
 
-        public void GiveName(string Name)
+        public void GiveName(Product Name)
 
         {
             searchAllProducts.Click();
             searchCreateNew.Click();
             searchProductName.SendKeys("Pie");
         }
-        public void GiveCategory(string Category)
+        public void GiveCategory(Product Category)
         {
             searchCategoryId.SendKeys("Confections");
         }
-        public void GiveSupplier(string Supplier)
+        public void GiveSupplier(Product Supplier)
         {
             searchSupplierId.SendKeys("Pavlova, Ltd.");
         }
-        public void GiveUnitPrice(string UnitPrice)
+        public void GiveUnitPrice(Product UnitPrice)
         {
             searchUnitPrice.SendKeys("12");
         }
-        public void GiveQuantityPerUnit(string QuantityPerUnit)
+        public void GiveQuantityPerUnit(Product QuantityPerUnit)
         {
             searchQuantityPerUnit.SendKeys("31-450 g boxes");
         }
-        public void GiveUnitsInStock(string UnitsInStock)
+        public void GiveUnitsInStock(Product UnitsInStock)
         {
             searchUnitsInStock.SendKeys("28");
         }
-        public void GiveUnitsOnOrder(string UnitsOnOrder)
+        public void GiveUnitsOnOrder(Product UnitsOnOrder)
         {
             searchUnitsOnOrder.SendKeys("0");
         }
-        public void GiveReorderLevel(string ReorderLevel)
+        public void GiveReorderLevel(Product ReorderLevel)
         {
             searchReorderLevel.SendKeys("11");
             searchBatten.Click();
