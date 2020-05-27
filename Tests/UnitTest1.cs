@@ -16,6 +16,7 @@ namespace TestSeleniumBasic
         private MainPage mainPage;
         private Product pie = new Product("Pie", "Confections", "Pavlova, Ltd.", "12", "31-450 g boxes", "28", "0", "11");
         private User user = new User("user");
+        private AllProductsPage allProductsPage;
         private const string searchPie = "Pie";
         private const string searchHomePage = "Home page";
         private const string searchLogin = "Login";
@@ -33,7 +34,7 @@ namespace TestSeleniumBasic
         {
             mainPage = new MainPage(driver);
             mainPage.Login(user);
-            Assert.IsTrue(true, searchHomePage);
+            Assert.IsTrue(searchHomePage == "Home page");
         }
 
         [Test]
@@ -42,7 +43,7 @@ namespace TestSeleniumBasic
             mainPage = new MainPage(driver);
             mainPage.Login(user);
             mainPage.Logout(user);
-            Assert.IsTrue(true, searchLogin);
+            Assert.IsTrue(searchLogin == "Login");
         }
 
         [Test]
@@ -50,8 +51,9 @@ namespace TestSeleniumBasic
         {
             mainPage = new MainPage(driver);
             mainPage.Login(user);
+            allProductsPage = new AllProductsPage(driver);
             ProductService.Add(pie, driver);
-            Assert.IsTrue(true, searchPie);
+            Assert.IsTrue(searchPie == "Pie");
         }
 
         [TearDown]

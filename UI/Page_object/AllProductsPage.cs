@@ -63,7 +63,7 @@ namespace TestSeleniumBasic
         public void GiveReorderLevel(Product ReorderLevel)
         {
             new Actions(driver).Click(searchReorderLevel).SendKeys(ReorderLevel.SearchReorderLevel).Build().Perform();
-            searchBatten.Click();
+            searchBatten.Click(); 
         }
     }
 }
