@@ -34,12 +34,21 @@ namespace TestSeleniumBasic
             new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
         }
 
+        public string CheckLogin(User user)
+        {
+            return driver.FindElement(By.XPath("//h2")).Text;
+        }
+
         private IWebElement searchLogout => driver.FindElement(By.XPath("//a[contains(text(),'Logout')]"));
         private IWebElement searchLogin => driver.FindElement(By.XPath("//h2"));
 
         public void Logout(User user)
         {
             searchLogout.Click();
+        }
+        public string CheckLogout(User user)
+        {
+            return driver.FindElement(By.XPath("//h2")).Text;
         }
     }
 }

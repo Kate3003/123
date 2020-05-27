@@ -65,5 +65,10 @@ namespace TestSeleniumBasic
             new Actions(driver).Click(searchReorderLevel).SendKeys(ReorderLevel.SearchReorderLevel).Build().Perform();
             searchBatten.Click(); 
         }
+
+        public string CheckProduct (Product Pie)
+        {
+                return driver.FindElement(By.XPath("//*[text()=\"Pie\"]")).Text;
+        }
     }
 }
