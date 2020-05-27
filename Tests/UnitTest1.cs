@@ -14,7 +14,6 @@ namespace TestSeleniumBasic
     {
         private IWebDriver driver;
         private MainPage mainPage;
-        //private AllProductsPage allProductsPage;
         private Product pie = new Product("Pie", "Confections", "Pavlova, Ltd.", "12", "31-450 g boxes", "28", "0", "11");
         private User user = new User("user");
         
@@ -31,7 +30,6 @@ namespace TestSeleniumBasic
         {
             mainPage = new MainPage(driver);
             mainPage.Login(user);
-            Assert.AreEqual("Home page", driver.FindElement(By.XPath("//h2")).Text);
         }
 
         [Test]
@@ -39,8 +37,7 @@ namespace TestSeleniumBasic
         {
             mainPage = new MainPage(driver);
             mainPage.Login(user);
-            driver.FindElement(By.XPath("//a[contains(text(),'Logout')]")).Click();
-            Assert.AreEqual("Login", driver.FindElement(By.XPath("//h2")).Text);
+            mainPage.Logout(user);
         }
 
         [Test]
@@ -49,7 +46,6 @@ namespace TestSeleniumBasic
             mainPage = new MainPage(driver);
             mainPage.Login(user);
             ProductService.Add(pie, driver);
-            Assert.IsTrue(driver.FindElement(By.XPath("//*[text()=\"Pie\"]")).Displayed);
         }
 
         [TearDown]
@@ -58,6 +54,5 @@ namespace TestSeleniumBasic
             driver.Close();
             driver.Quit();
         }
-
     }
 }

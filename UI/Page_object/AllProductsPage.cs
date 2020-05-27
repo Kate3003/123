@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,42 +27,44 @@ namespace TestSeleniumBasic
         private IWebElement searchUnitsOnOrder => driver.FindElement(By.XPath("//input[@id=\"UnitsOnOrder\"]"));
         private IWebElement searchReorderLevel => driver.FindElement(By.XPath("//input[@id=\"ReorderLevel\"]"));
         private IWebElement searchBatten => driver.FindElement(By.CssSelector(".btn"));
+        private IWebElement searchPie => driver.FindElement(By.XPath("//*[text()=\"Pie\"]"));
 
         public void GiveName(Product Name)
 
         {
-            searchAllProducts.Click();
+            searchAllProducts.Click(); 
             searchCreateNew.Click();
-            searchProductName.SendKeys("Pie");
+            new Actions(driver).Click(searchProductName).SendKeys(Name.SearchName).Build().Perform();
         }
         public void GiveCategory(Product Category)
         {
-            searchCategoryId.SendKeys("Confections");
+            new Actions(driver).Click(searchCategoryId).SendKeys(Category.SearchCategory).Build().Perform();
         }
         public void GiveSupplier(Product Supplier)
         {
-            searchSupplierId.SendKeys("Pavlova, Ltd.");
+            new Actions(driver).Click(searchSupplierId).SendKeys(Supplier.SearchSupplier).Build().Perform();
         }
         public void GiveUnitPrice(Product UnitPrice)
         {
-            searchUnitPrice.SendKeys("12");
+            new Actions(driver).Click(searchUnitPrice).SendKeys(UnitPrice.SearchUnitPrice).Build().Perform();
         }
         public void GiveQuantityPerUnit(Product QuantityPerUnit)
         {
-            searchQuantityPerUnit.SendKeys("31-450 g boxes");
+            new Actions(driver).Click(searchQuantityPerUnit).SendKeys(QuantityPerUnit.SearchQuantityPerUnit).Build().Perform();
         }
         public void GiveUnitsInStock(Product UnitsInStock)
         {
-            searchUnitsInStock.SendKeys("28");
+            new Actions(driver).Click(searchUnitsInStock).SendKeys(UnitsInStock.SearchUnitsInStock).Build().Perform();
         }
         public void GiveUnitsOnOrder(Product UnitsOnOrder)
         {
-            searchUnitsOnOrder.SendKeys("0");
+            new Actions(driver).Click(searchUnitsOnOrder).SendKeys(UnitsOnOrder.SearchUnitsOnOrder).Build().Perform();
         }
         public void GiveReorderLevel(Product ReorderLevel)
         {
-            searchReorderLevel.SendKeys("11");
+            new Actions(driver).Click(searchReorderLevel).SendKeys(ReorderLevel.SearchReorderLevel).Build().Perform();
             searchBatten.Click();
+            Assert.IsTrue(searchPie.Displayed);
         }
     }
 }
