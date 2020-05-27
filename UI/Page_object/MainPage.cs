@@ -32,7 +32,6 @@ namespace TestSeleniumBasic
             new Actions(driver).Click(searchName).SendKeys(user.SearchText).Build().Perform();
             new Actions(driver).Click(searchPassword).SendKeys(user.SearchText).Build().Perform();
             new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
-            Assert.AreEqual("Home page", searchHomePage.Text);
         }
 
         private IWebElement searchLogout => driver.FindElement(By.XPath("//a[contains(text(),'Logout')]"));
@@ -41,7 +40,6 @@ namespace TestSeleniumBasic
         public void Logout(User user)
         {
             searchLogout.Click();
-            Assert.AreEqual("Login", searchLogin.Text);
         }
     }
 }

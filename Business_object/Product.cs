@@ -27,6 +27,7 @@ namespace TestSeleniumBasic.Business_object
             this.SearchUnitsOnOrder = SearchUnitsOnOrder;
             this.SearchUnitsInStock = SearchUnitsInStock;
             this.SearchReorderLevel = SearchReorderLevel;
+            
         }
 
     }

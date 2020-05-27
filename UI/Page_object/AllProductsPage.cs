@@ -64,7 +64,6 @@ namespace TestSeleniumBasic
         {
             new Actions(driver).Click(searchReorderLevel).SendKeys(ReorderLevel.SearchReorderLevel).Build().Perform();
             searchBatten.Click();
-            Assert.IsTrue(searchPie.Displayed);
         }
     }
 }
