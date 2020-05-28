@@ -14,7 +14,7 @@ namespace TestSeleniumBasic
     {
         private IWebDriver driver;
         private MainPage mainPage;
-        private Product pie = new Product("Pie", "Confections", "Pavlova, Ltd.", "12", "31-450 g boxes", "28", "0", "11");
+        private Product pie = new Product("Pie", "Confections", "Pavlova, Ltd.", "12", "31-450 g boxes", "28", "0", "11", "Pie");
         private User user = new User("user");
         private AllProductsPage allProductsPage;
       
@@ -44,15 +44,15 @@ namespace TestSeleniumBasic
             Assert.AreEqual("Login", mainPage.CheckLogout(user));
         }
 
-        [Test]
-        public void AddProduct()
-        {
-            mainPage = new MainPage(driver);
-            mainPage.Login(user);
-            allProductsPage = new AllProductsPage(driver);
-            ProductService.Add(pie, driver);
-            Assert.AreEqual("Pie", allProductsPage.CheckProduct(pie));
-        }
+        //[Test]
+        //public void AddProduct()
+        //{
+        //    mainPage = new MainPage(driver);
+        //    mainPage.Login(user);
+        //    allProductsPage = new AllProductsPage(driver);
+        //    ProductService.Add(pie, driver);
+        //    Assert.AreEqual("Pie", allProductsPage.CheckProduct(pie));
+        //}
 
         [TearDown]
         public void CleanUp()

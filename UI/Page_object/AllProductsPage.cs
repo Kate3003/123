@@ -68,7 +68,7 @@ namespace TestSeleniumBasic
 
         public string CheckProduct (Product Pie)
         {
-                return driver.FindElement(By.XPath("//*[text()=\"Pie\"]")).Text;
+                return searchPie.Text;
         }
     }
 }

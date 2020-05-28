@@ -14,9 +14,10 @@ namespace TestSeleniumBasic.Business_object
         public string SearchUnitsInStock { get; set; }
         public string SearchUnitsOnOrder { get; set; }
         public string SearchReorderLevel { get; set; }
+        public string SearchPie { get; set; }
 
         public Product(string SearchName, string SearchCategory, string SearchSupplier, string SearchUnitPrice,
-            string SearchQuantityPerUnit, string SearchUnitsInStock, string SearchUnitsOnOrder, string SearchReorderLevel)
+            string SearchQuantityPerUnit, string SearchUnitsInStock, string SearchUnitsOnOrder, string SearchReorderLevel, string SearchPie)
         {
             
             this.SearchName = SearchName;
@@ -27,7 +28,7 @@ namespace TestSeleniumBasic.Business_object
             this.SearchUnitsOnOrder = SearchUnitsOnOrder;
             this.SearchUnitsInStock = SearchUnitsInStock;
             this.SearchReorderLevel = SearchReorderLevel;
-            
+            this.SearchPie = SearchPie;
         }
 
     }

@@ -36,7 +36,7 @@ namespace TestSeleniumBasic
 
         public string CheckLogin(User user)
         {
-            return driver.FindElement(By.XPath("//h2")).Text;
+            return searchHomePage.Text;
         }
 
         private IWebElement searchLogout => driver.FindElement(By.XPath("//a[contains(text(),'Logout')]"));
@@ -48,7 +48,7 @@ namespace TestSeleniumBasic
         }
         public string CheckLogout(User user)
         {
-            return driver.FindElement(By.XPath("//h2")).Text;
+            return searchLogin.Text;
         }
     }
 }
