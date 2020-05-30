@@ -31,10 +31,14 @@ namespace TestSeleniumBasic
         {
             new Actions(driver).Click(searchName).SendKeys(user.SearchText).Build().Perform();
             new Actions(driver).Click(searchPassword).SendKeys(user.SearchText).Build().Perform();
-            new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
+           
         }
 
-        public string CheckLogin(User user)
+        public void LoginClick()
+        {
+             new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
+        }
+        public string CheckLogin()
         {
             return searchHomePage.Text;
         }

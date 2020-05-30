@@ -13,10 +13,10 @@ namespace TestSeleniumBasic
     public class Tests
     {
         private IWebDriver driver;
-        private MainPage mainPage;
-        private Product pie = new Product("Pie", "Confections", "Pavlova, Ltd.", "12", "31-450 g boxes", "28", "0", "11", "Pie");
-        private User user = new User("user");
-        private AllProductsPage allProductsPage;
+        //private MainPage mainPage;
+        //private Product pie = new Product("Pie", "Confections", "Pavlova, Ltd.", "12", "31-450 g boxes", "28", "0", "11", "Pie");
+        //private User user = new User("user");
+        //private AllProductsPage allProductsPage;
       
 
         [SetUp]
@@ -27,22 +27,22 @@ namespace TestSeleniumBasic
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
-        [Test]
-        public void Login()
-        {
-            mainPage = new MainPage(driver);
-            mainPage.Login(user);
-            Assert.AreEqual("Home page", mainPage.CheckLogin(user));
-        }
+        //[Test]
+        //public void Login()
+        //{
+        //    mainPage = new MainPage(driver);
+        //    mainPage.Login(user);
+        //    Assert.AreEqual("Home page", mainPage.CheckLogin(user));
+        //}
 
-        [Test]
-        public void Logout()
-        {
-            mainPage = new MainPage(driver);
-            mainPage.Login(user);
-            mainPage.Logout(user);
-            Assert.AreEqual("Login", mainPage.CheckLogout(user));
-        }
+        //[Test]
+        //public void Logout()
+        //{
+        //    mainPage = new MainPage(driver);
+        //    mainPage.Login(user);
+        //    mainPage.Logout(user);
+        //    Assert.AreEqual("Login", mainPage.CheckLogout(user));
+        //}
 
         //[Test]
         //public void AddProduct()

@@ -30,6 +30,5 @@ namespace TestSeleniumBasic.Business_object
             this.SearchReorderLevel = SearchReorderLevel;
             this.SearchPie = SearchPie;
         }
-
     }
 }
