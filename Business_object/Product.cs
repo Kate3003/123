@@ -6,29 +6,31 @@ namespace TestSeleniumBasic.Business_object
 {
     class Product
     {
-        public string SearchName { get; set; }
-        public string SearchCategory { get; set; }
-        public string SearchSupplier { get; set; }
-        public string SearchUnitPrice { get; set; }
-        public string SearchQuantityPerUnit { get; set; }
-        public string SearchUnitsInStock { get; set; }
-        public string SearchUnitsOnOrder { get; set; }
-        public string SearchReorderLevel { get; set; }
-        public string SearchPie { get; set; }
+        public string ProductName { get; set; }
+        public string CategoryID { get; set; }
+        public string Supplier { get; set; }
+        public string UnitPrice { get; set; }
+        public string QuantityPerUnit { get; set; }
+        public string UnitsInStock { get; set; }
+        public string UnitsOnOrder { get; set; }
+        public string ReorderLevel { get; set; }
+        public string Pie { get; set; }
+        public string ecpectedProductEditing { get; set; }
 
-        public Product(string SearchName, string SearchCategory, string SearchSupplier, string SearchUnitPrice,
-            string SearchQuantityPerUnit, string SearchUnitsInStock, string SearchUnitsOnOrder, string SearchReorderLevel, string SearchPie)
+    public Product(string ProductName, string CategoryID, string Supplier, string UnitPrice,
+            string QuantityPerUnit, string UnitsInStock, string UnitsOnOrder, string ReorderLevel, string Pie, string ecpectedProductEditing)
         {
             
-            this.SearchName = SearchName;
-            this.SearchCategory = SearchCategory;
-            this.SearchSupplier = SearchSupplier;
-            this.SearchUnitPrice = SearchUnitPrice;
-            this.SearchQuantityPerUnit = SearchQuantityPerUnit;
-            this.SearchUnitsOnOrder = SearchUnitsOnOrder;
-            this.SearchUnitsInStock = SearchUnitsInStock;
-            this.SearchReorderLevel = SearchReorderLevel;
-            this.SearchPie = SearchPie;
+            this.ProductName = ProductName;
+            this.CategoryID = CategoryID;
+            this.Supplier = Supplier;
+            this.UnitPrice = UnitPrice;
+            this.QuantityPerUnit = QuantityPerUnit;
+            this.UnitsOnOrder = UnitsOnOrder;
+            this.UnitsInStock = UnitsInStock;
+            this.ReorderLevel = ReorderLevel;
+            this.Pie = Pie;
+            this.ecpectedProductEditing = ecpectedProductEditing;
         }
     }
 }

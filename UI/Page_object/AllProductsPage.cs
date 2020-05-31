@@ -28,47 +28,61 @@ namespace TestSeleniumBasic
         private IWebElement searchReorderLevel => driver.FindElement(By.XPath("//input[@id=\"ReorderLevel\"]"));
         private IWebElement searchBatten => driver.FindElement(By.CssSelector(".btn"));
         private IWebElement searchPie => driver.FindElement(By.XPath("//*[text()=\"Pie\"]"));
+        private IWebElement productEditingPage => driver.FindElement(By.CssSelector("h2"));
 
+        public void AllProducts()
+        {
+            searchAllProducts.Click();
+        }
+        public void CreateNew()
+        {
+             searchCreateNew.Click();
+        }
+        public string CheckProductEditingPage(Product product) 
+        { 
+            return productEditingPage.Text; 
+        }
         public void GiveName(Product Name)
 
         {
-            searchAllProducts.Click(); 
-            searchCreateNew.Click();
-            new Actions(driver).Click(searchProductName).SendKeys(Name.SearchName).Build().Perform();
+            new Actions(driver).Click(searchProductName).SendKeys(Name.ProductName).Build().Perform();
         }
         public void GiveCategory(Product Category)
         {
-            new Actions(driver).Click(searchCategoryId).SendKeys(Category.SearchCategory).Build().Perform();
+            new Actions(driver).Click(searchCategoryId).SendKeys(Category.CategoryID).Build().Perform();
         }
         public void GiveSupplier(Product Supplier)
         {
-            new Actions(driver).Click(searchSupplierId).SendKeys(Supplier.SearchSupplier).Build().Perform();
+            new Actions(driver).Click(searchSupplierId).SendKeys(Supplier.Supplier).Build().Perform();
         }
         public void GiveUnitPrice(Product UnitPrice)
         {
-            new Actions(driver).Click(searchUnitPrice).SendKeys(UnitPrice.SearchUnitPrice).Build().Perform();
+            new Actions(driver).Click(searchUnitPrice).SendKeys(UnitPrice.UnitPrice).Build().Perform();
         }
         public void GiveQuantityPerUnit(Product QuantityPerUnit)
         {
-            new Actions(driver).Click(searchQuantityPerUnit).SendKeys(QuantityPerUnit.SearchQuantityPerUnit).Build().Perform();
+            new Actions(driver).Click(searchQuantityPerUnit).SendKeys(QuantityPerUnit.QuantityPerUnit).Build().Perform();
         }
         public void GiveUnitsInStock(Product UnitsInStock)
         {
-            new Actions(driver).Click(searchUnitsInStock).SendKeys(UnitsInStock.SearchUnitsInStock).Build().Perform();
+            new Actions(driver).Click(searchUnitsInStock).SendKeys(UnitsInStock.UnitsInStock).Build().Perform();
         }
         public void GiveUnitsOnOrder(Product UnitsOnOrder)
         {
-            new Actions(driver).Click(searchUnitsOnOrder).SendKeys(UnitsOnOrder.SearchUnitsOnOrder).Build().Perform();
+            new Actions(driver).Click(searchUnitsOnOrder).SendKeys(UnitsOnOrder.UnitsOnOrder).Build().Perform();
         }
         public void GiveReorderLevel(Product ReorderLevel)
         {
-            new Actions(driver).Click(searchReorderLevel).SendKeys(ReorderLevel.SearchReorderLevel).Build().Perform();
-            searchBatten.Click(); 
+            new Actions(driver).Click(searchReorderLevel).SendKeys(ReorderLevel.ReorderLevel).Build().Perform();
+        }
+        public void Batten()
+        {
+            searchBatten.Click();
         }
 
         public string CheckProduct (Product Pie)
         {
-                return searchPie.Text;
+           return searchPie.Text;
         }
     }
 }

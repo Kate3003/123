@@ -17,7 +17,7 @@ namespace TestSeleniumBasic
         //private Product pie = new Product("Pie", "Confections", "Pavlova, Ltd.", "12", "31-450 g boxes", "28", "0", "11", "Pie");
         //private User user = new User("user");
         //private AllProductsPage allProductsPage;
-      
+
 
         [SetUp]
         public void Setup()
