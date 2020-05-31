@@ -8,7 +8,7 @@ Given I open "http://localhost:5000/" url
 When I type in the fields Name "user", Password "user"
 And I click the login button
 Then The phrase should be "Home page"
-When I click on the link All Products
+When I click the link All Products
 And I click the Create new button
 Then I should be at the "Product editing" page
 When I type the value "Pie" ProductName

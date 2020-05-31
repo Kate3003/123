@@ -112,7 +112,7 @@ testRunner.And("I click the login button", ((string)(null)), ((TechTalk.SpecFlow
 testRunner.Then("The phrase should be \"Home page\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
-testRunner.When("I click on the link All Products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click the link All Products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
 testRunner.And("I click the Create new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
