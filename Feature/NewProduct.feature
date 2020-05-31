@@ -1,7 +1,6 @@
 ﻿Feature: Add New Product
 As a user 
-I want to create a new product in the database
-So I can create product
+I want to add a new product to the database
 
 Scenario: Add product
 
