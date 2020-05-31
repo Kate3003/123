@@ -19,5 +19,5 @@ When I type the value "231-450 g boxes" QuantityPerUnit
 When I type the value "28" UnitsInStock
 When I type the value "0" UnitsOnOrder
 When I type the value "11" ReorderLevel
-When I click the Send button 
+When I click the Send button
 Then Product Name schould be "Pie"

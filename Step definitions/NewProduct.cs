@@ -58,49 +58,49 @@ namespace TestSeleniumBasic.Step_definitions
                 null, null, null, null, null, ecpectedProductEditing)));
         }
 
-        [When(@"I type the value  ""(.*)"" ProductName")]
+        [When(@"I type the value ""(.*)"" ProductName")]
         public void WhenITypeValueProductName(string ProductName)
         {
             new AllProductsPage(driver).GiveName(new Product(ProductName, null, null, null, null, null, null, null, null, null));
         }
 
 
-        [When(@"I type the value  ""(.*)"" Category")]
+        [When(@"I select ""(.*)"" Category")]
         public void WhenITypeValueCategoryID(string CategoryID)
         {
             new AllProductsPage(driver).GiveCategory(new Product(null, CategoryID, null, null, null, null, null, null, null, null));
         }
 
 
-        [When(@"I type the value  ""(.*)"" Supplier")]
+        [When(@"I select ""(.*)"" Supplier")]
         public void WhenITypeValueSupplier(string Supplier)
         {
             new AllProductsPage(driver).GiveSupplier(new Product(null, null, Supplier, null, null, null, null, null, null, null));
         }
 
 
-        [When(@"I type the value  ""(.*)"" UnitPrice")]
+        [When(@"I type the value ""(.*)"" UnitPrice")]
         public void WhenITypeValueUnitPrice(string UnitPrice)
         {
             new AllProductsPage(driver).GiveUnitPrice(new Product(null, null, null, UnitPrice, null, null, null, null, null, null));
         }
 
 
-        [When(@"I type the value  ""(.*)"" QuantityPerUnit")]
+        [When(@"I type the value ""(.*)"" QuantityPerUnit")]
         public void WhenITypeValueQuantityPerUnit(string QuantityPerUnit)
         {
             new AllProductsPage(driver).GiveQuantityPerUnit(new Product(null, null, null, null, QuantityPerUnit, null, null, null, null, null));
         }
 
 
-        [When(@"I type the value  ""(.*)"" UnitsInStock")]
+        [When(@"I type the value ""(.*)"" UnitsInStock")]
         public void WhenITypeValueUnitsInStock(string UnitsInStock)
         {
             new AllProductsPage(driver).GiveUnitsInStock(new Product(null, null, null, null, null, UnitsInStock, null, null, null, null));
         }
 
 
-        [When(@"I type the value  ""(.*)"" UnitsOnOrder")]
+        [When(@"I type the value ""(.*)"" UnitsOnOrder")]
         public void WhenITypeValueUnitsOnOrder(string UnitsOnOrder)
         {
             new AllProductsPage(driver).GiveUnitsOnOrder(new Product(null, null, null, null, null, null, UnitsOnOrder, null, null, null));
@@ -108,14 +108,14 @@ namespace TestSeleniumBasic.Step_definitions
 
 
 
-        [When(@"I type the value  ""(.*)"" ReorderLevel")]
+        [When(@"I type the value ""(.*)"" ReorderLevel")]
         public void WhenITypeValueReorderLevel(string ReorderLevel)
         {
             new AllProductsPage(driver).GiveReorderLevel(new Product(null, null, null, null, null, null, null, ReorderLevel, null, null));
         }
 
 
-        [When(@"I click the Send button ")]
+        [When(@"I click the Send button")]
         public void WhenIClickOnSendButton()
         {
             new AllProductsPage(driver).Batten();
